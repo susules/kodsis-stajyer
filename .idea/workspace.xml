@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="babaf284-3765-4e05-8050-11feb9a1abef" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/copyright/profiles_settings.xml" afterPath="$PROJECT_DIR$/.idea/copyright/profiles_settings.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="kodsis-stajyer.iws" />
@@ -520,7 +519,7 @@
       <workItem from="1499325770709" duration="1327000" />
       <workItem from="1499327577053" duration="261000" />
       <workItem from="1499330520806" duration="122000" />
-      <workItem from="1499330659720" duration="71000" />
+      <workItem from="1499330659720" duration="83000" />
     </task>
     <task id="LOCAL-00001" summary="Eksik ama başlangıç olarak yeterli daha sonra düzeltilecek">
       <created>1469543486898</created>
@@ -550,11 +549,15 @@
       <created>1499330716826</created>
       <updated>1499330716826</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Eksik ama başlangıç olarak yeterli daha sonra düzeltilecek">
+      <created>1499330735499</created>
+      <updated>1499330735499</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="6080000" />
+    <option name="totallyTimeSpent" value="6092000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="46" y="21" width="1874" height="1179" extended-state="6" />
