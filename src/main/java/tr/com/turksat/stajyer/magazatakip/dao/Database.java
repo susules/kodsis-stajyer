@@ -1,4 +1,4 @@
-package tr.com.stajyer.magazatakip.dao;
+package tr.com.turksat.stajyer.magazatakip.dao;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

@@ -1,11 +1,11 @@
-package tr.com.stajyer.magazatakip.jsfbean;
+package tr.com.turksat.stajyer.magazatakip.jsfbean;
 
 /**
  * Created by scinkir on 10.07.2015.
  */
 
 
-import tr.com.stajyer.magazatakip.domain.MarkaTipi;
+import tr.com.turksat.stajyer.magazatakip.domain.MarkaTipi;
 
 import javax.faces.application.FacesMessage;
 import javax.faces.component.UIComponent;

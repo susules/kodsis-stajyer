@@ -1,4 +1,4 @@
-package tr.com.stajyer.magazatakip.domain;
+package tr.com.turksat.stajyer.magazatakip.domain;
 
 public class Kullanici
 {

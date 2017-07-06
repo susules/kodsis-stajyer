@@ -1,4 +1,4 @@
-package tr.com.stajyer.magazatakip.domain;
+package tr.com.turksat.stajyer.magazatakip.domain;
 
 /**
  * Created by husnu on 10.7.2015.

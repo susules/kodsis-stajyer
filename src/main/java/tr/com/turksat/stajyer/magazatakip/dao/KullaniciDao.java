@@ -1,6 +1,6 @@
-package tr.com.stajyer.magazatakip.dao;
+package tr.com.turksat.stajyer.magazatakip.dao;
 
-import tr.com.stajyer.magazatakip.domain.Kullanici;
+import tr.com.turksat.stajyer.magazatakip.domain.Kullanici;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;

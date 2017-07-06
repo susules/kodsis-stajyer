@@ -1,4 +1,4 @@
-package tr.com.stajyer.magazatakip.jsfbean;
+package tr.com.turksat.stajyer.magazatakip.jsfbean;
 
 /**
  * Created by scinkir on 10.07.2015.
