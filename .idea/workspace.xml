@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="babaf284-3765-4e05-8050-11feb9a1abef" name="Default" comment="Eksik ama başlangıç olarak yeterli daha sonra düzeltilecek">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kodsis-stajyer.iml" afterPath="$PROJECT_DIR$/kodsis-stajyer.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
+    <list default="true" id="babaf284-3765-4e05-8050-11feb9a1abef" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="kodsis-stajyer.iws" />
@@ -580,7 +578,7 @@
       <workItem from="1499092925238" duration="24000" />
       <workItem from="1499092952068" duration="2290000" />
       <workItem from="1499325770709" duration="1327000" />
-      <workItem from="1499327577053" duration="237000" />
+      <workItem from="1499327577053" duration="250000" />
     </task>
     <task id="LOCAL-00001" summary="Eksik ama başlangıç olarak yeterli daha sonra düzeltilecek">
       <created>1469543486898</created>
@@ -598,11 +596,15 @@
       <created>1499327788666</created>
       <updated>1499327788666</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Eksik ama başlangıç olarak yeterli daha sonra düzeltilecek">
+      <created>1499327820078</created>
+      <updated>1499327820078</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="5863000" />
+    <option name="totallyTimeSpent" value="5876000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
