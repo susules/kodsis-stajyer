@@ -1,3 +1,14 @@
 # Created by .ignore support plugin (hsz.mobi)
-/.idea/
-/kodsis-stajyer.iml
+/target
+/generated
+/generated-tests
+/.idea
+/.settings
+/.classpath
+/.factorypath
+/.project
+kodsis-stajyer.iml
+/.logs
+/bin
+*.iml
+*.log
