@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="babaf284-3765-4e05-8050-11feb9a1abef" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/copyright/profiles_settings.xml" afterPath="$PROJECT_DIR$/.idea/copyright/profiles_settings.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="kodsis-stajyer.iws" />
@@ -70,7 +70,7 @@
       <file leaf-file-name=".gitignore" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="13" column="5" selection-start="179" selection-end="179" vertical-scroll-proportion="0.4968153" vertical-offset="0" max-vertical-offset="471">
+            <state line="13" column="5" selection-start="179" selection-end="179" vertical-scroll-proportion="0.4989339" vertical-offset="0" max-vertical-offset="469">
               <folding />
             </state>
           </provider>
@@ -520,7 +520,7 @@
       <workItem from="1499325770709" duration="1327000" />
       <workItem from="1499327577053" duration="261000" />
       <workItem from="1499330520806" duration="122000" />
-      <workItem from="1499330659720" duration="51000" />
+      <workItem from="1499330659720" duration="71000" />
     </task>
     <task id="LOCAL-00001" summary="Eksik ama başlangıç olarak yeterli daha sonra düzeltilecek">
       <created>1469543486898</created>
@@ -546,18 +546,22 @@
       <created>1499327831020</created>
       <updated>1499327831020</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Eksik ama başlangıç olarak yeterli daha sonra düzeltilecek">
+      <created>1499330716826</created>
+      <updated>1499330716826</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="6060000" />
+    <option name="totallyTimeSpent" value="6080000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="46" y="21" width="1874" height="1179" extended-state="6" />
     <editor active="false" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Changes" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.5301318" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.5311321" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3282313" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -706,7 +710,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="5" selection-start="179" selection-end="179" vertical-scroll-proportion="0.4968153" vertical-offset="0" max-vertical-offset="471">
+        <state line="13" column="5" selection-start="179" selection-end="179" vertical-scroll-proportion="0.4989339" vertical-offset="0" max-vertical-offset="469">
           <folding />
         </state>
       </provider>
