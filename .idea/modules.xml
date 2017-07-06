@@ -3,7 +3,6 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/kodsis-stajyer.iml" filepath="$PROJECT_DIR$/kodsis-stajyer.iml" />
-      <module fileurl="file://$PROJECT_DIR$/magaza-takip.iml" filepath="$PROJECT_DIR$/magaza-takip.iml" />
     </modules>
   </component>
 </project>
