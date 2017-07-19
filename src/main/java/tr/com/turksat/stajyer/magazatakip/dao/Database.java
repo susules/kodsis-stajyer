@@ -10,9 +10,9 @@ public class Database {
 
     public static Connection getConnection() {
         try {
-            Class.forName("Driver");
-            Connection con = DriverManager.getConnection("veritabanı",
-                    "kullanıcıAdı", "Şifre");
+            Class.forName("org.postgresql.Driver");
+            Connection con = DriverManager.getConnection("jdbc:postgresql://localhost:5432/kodsisd?searchpath=kodsisd?rewriteBatchedStatements=true",
+                    "test", "test");
             return con;
         } catch (Exception ex) {
             System.out.println("Database.getConnection() HATASI" + ex.getMessage());

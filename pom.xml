@@ -63,11 +63,20 @@
             <version>3.0.0</version>
         </dependency>
 
+        <!-- https://mvnrepository.com/artifact/junit/junit -->
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.12</version>
+            <scope>test</scope>
+        </dependency>
 
     </dependencies>
 
 
     <build>
+
+
         <resources>
             <resource>
                 <directory>${resources.directory}</directory>
@@ -123,6 +132,23 @@
                 </configuration>
             </plugin>
 
+            <!--<plugin>-->
+                <!--<groupId>org.apache.maven.plugins</groupId>-->
+                <!--<artifactId>maven-surefire-plugin</artifactId>-->
+                <!--<version>2.20</version>-->
+                <!--<configuration>-->
+                    <!--<forkCount>3</forkCount>-->
+                    <!--<reuseForks>true</reuseForks>-->
+                    <!--<argLine>-Xmx1024m -XX:MaxPermSize=256m</argLine>-->
+                    <!--&lt;!&ndash;<testFailureIgnore>true</testFailureIgnore>&ndash;&gt;-->
+                    <!--<includes>-->
+                        <!--&lt;!&ndash; Sadece suite'te tanımlı test sınıflarını çalıştır. &ndash;&gt;-->
+                        <!--<include>**/*TestSuite.java</include>-->
+                        <!--&lt;!&ndash; Bütün servis testleri çalıştırır &ndash;&gt;-->
+                        <!--<include>**/*Test.java</include>-->
+                    <!--</includes>-->
+                <!--</configuration>-->
+            <!--</plugin>-->
         </plugins>
 
     </build>
