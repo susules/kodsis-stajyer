@@ -10,7 +10,6 @@ import java.sql.Connection;
  */
 public class KullaniciDaoTest {
 
-    
     @Test
     public void testGetKullanici(){
         Connection con = Database.getConnection();
