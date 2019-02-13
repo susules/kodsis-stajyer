@@ -15,4 +15,5 @@ public class KullaniciDaoTest {
         Connection con = Database.getConnection();
         Assert.assertEquals(1,1);
     }
+
 }
