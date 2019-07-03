@@ -16,8 +16,11 @@
         <resources.directory>src/main/resources</resources.directory>
         <webapp.directory>src/main/web</webapp.directory>
         <org.postgresql.version>42.2.5</org.postgresql.version>
-        <primefaces.version>7.0</primefaces.version>
+        <primefaces.version>6.1</primefaces.version>
         <source.version>1.8</source.version>
+        <jsf.version>2.2.19</jsf.version>
+        <jsf.extension.version>3.1.0</jsf.extension.version>
+        <javax.servlet.version>3.0.1</javax.servlet.version>
     </properties>
 
 
@@ -30,6 +33,13 @@
         </dependency>
 
         <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>javax.servlet-api</artifactId>
+            <version>${javax.servlet.version}</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <dependency>
             <groupId>org.postgresql</groupId>
             <artifactId>postgresql</artifactId>
             <version>${org.postgresql.version}</version>
@@ -38,12 +48,12 @@
         <dependency>
             <groupId>com.sun.faces</groupId>
             <artifactId>jsf-api</artifactId>
-            <version>2.2.10</version>
+            <version>${jsf.version}</version>
         </dependency>
         <dependency>
             <groupId>com.sun.faces</groupId>
             <artifactId>jsf-impl</artifactId>
-            <version>2.2.10</version>
+            <version>${jsf.version}</version>
         </dependency>
 
 
@@ -62,7 +72,7 @@
         <dependency>
             <groupId>org.primefaces.extensions</groupId>
             <artifactId>primefaces-extensions</artifactId>
-            <version>3.0.0</version>
+            <version>${jsf.extension.version}</version>
         </dependency>
 
         <dependency>

@@ -8,31 +8,32 @@ import tr.com.turksat.stajyer.magazatakip.service.KullaniciService;
 
 import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
-import javax.faces.bean.ViewScoped;
 import javax.faces.event.AjaxBehaviorEvent;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
 @ManagedBean
-public class KullaniciForm implements Serializable{
+public class KullaniciForm implements Serializable {
 
-
+    KullaniciService kullaniciService = new KullaniciService();
+    List<MarkaTipi> markalar = new ArrayList();
+    List<UrunTipi> urunTipleri = new ArrayList();
+    List<Kullanici> kullanicilar = new ArrayList<>();
     private Kullanici kullanici;
     private String silinecekUrunTipi = "";
     private String urunTipiid = "";
-    private UrunTipi uruntipi ;
+    private UrunTipi uruntipi;
     private ModelTipi modeltipi = new ModelTipi();
     private MarkaTipi markatipi = new MarkaTipi();
-    List<MarkaTipi> markalar = new ArrayList();
-    List<UrunTipi> urunTipleri = new ArrayList();
+
 
     public KullaniciForm() {
 
     }
 
     @PostConstruct
-    public void init(){
+    public void init() {
         uruntipi = new UrunTipi();
         kullanici = new Kullanici();
         modeltipi = new ModelTipi();
@@ -47,6 +48,9 @@ public class KullaniciForm implements Serializable{
         y.setId(2);
         urunTipleri.add(x);
         urunTipleri.add(y);
+
+
+        kullanicilar = kullaniciService.getKullanicilar();
     }
 
     public Kullanici getKullanici() {
@@ -174,13 +178,17 @@ public class KullaniciForm implements Serializable{
     }
 
     public void filtreMarka() {
-        if (uruntipi!=null && uruntipi.getId()!=-1);
+        if (uruntipi != null && uruntipi.getId() != -1) ;
 //            markalar=new KullaniciService().getMarkalar(uruntipi);
     }
 
     public void filtreMarka2(AjaxBehaviorEvent event) {
-        if (uruntipi!=null);
+        if (uruntipi != null) ;
 //            markalar=new KullaniciService().getMarkalar(uruntipi);
 
+    }
+
+    public List<Kullanici> getKullanicilar() {
+        return kullanicilar;
     }
 }
