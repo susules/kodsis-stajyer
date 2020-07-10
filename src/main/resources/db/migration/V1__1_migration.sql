@@ -13,5 +13,3 @@ CREATE TABLE stajyer.tb_kullanici (
 ALTER TABLE stajyer.tb_kullanici
   OWNER TO stajyer;
 
- INSERT INTO  stajyer.tb_kullanici ( id,  kullanici_adi,  sifre)  VALUES ( 1, 'admin', '1');
- INSERT INTO  stajyer.tb_kullanici ( id,  kullanici_adi,  sifre)  VALUES ( 1, 'stajyer', '2');

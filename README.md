@@ -1,8 +1,14 @@
-Proje
+**Mağaza Satış Takip Programı**
+
+**Projenin çalıştırılması
 run komutu: "clean install jetty:run"   
 url: http://localhost:9091/kodsis-stajyer/giris.jsf
 
---Manuel Veritabanı ve rol oluşturulur
+**Projeyi çalıştırmadan önce izlenecek adımlar
+Projedeki database ve parametrik propertyler src/main/resources/project-config.properties dosyası içerisindedir.
+maven komutlarını intellijidea içinde edit configuration'a maven komutu olarak ekleyebilirsiniz.
+
+**Aşağıdaki sorgular ile manuel veritabanı , rol ,şema oluşturulur
 
 CREATE ROLE stajyer LOGIN
   ENCRYPTED PASSWORD '1'
@@ -16,24 +22,23 @@ CREATE DATABASE stajyer
 
 CREATE SCHEMA IF NOT EXISTS stajyer ;
 	
--- kullanıcı tablosunun ve verilerinin oluşturulması
---aşağıdaki maven komutu çalıştırılarak db migrate olur
---oluşturulan diğer sorgular V3__1_migration.sql diye artan sırada versiyonlanarak eklenir.
--- compile flyway:migrate	      
-	   
-drop table if exists stajyer.tb_kullanici;
-	   
-CREATE TABLE stajyer.tb_kullanici (
-  id BIGINT NOT NULL,
-  kullanici_adi VARCHAR(255),
-  sifre VARCHAR(255),
-  CONSTRAINT kullanici_pkey PRIMARY KEY(id)
-) ;
+Kullanıcı tablosunun ve verilerinin oluşturulması için aşağıdaki maven komutu çalıştırılarak db migrate olur
+Oluştururacağınız diğer sorgular V3__1_migration.sql şeklinde isimlendirilerek(artan sırada versiyonlanarak)  src/main/resources/db/migration'a eklenir.
+Db Migrate komutu = "compile flyway:migrate"
 
-ALTER TABLE stajyer.tb_kullanici OWNER TO stajyer;
-   
-  
- INSERT INTO  stajyer.tb_kullanici ( id,  kullanici_adi,  sifre)  VALUES ( 1, 'admin', '1');
- INSERT INTO  stajyer.tb_kullanici ( id,  kullanici_adi,  sifre)  VALUES ( 1, 'stajyer', '2');  
+
+Projede yapısı
+dao : Veritabanı ile ilgili tüm işler
+domain : entity ve modeller
+jsfbean : jsf bean
+service  : iş mantıkları
+
+
+web : arayüz 
+
+web->jsfbean(domain)->service(dao,domain)
+
+	      
+	   
 	   
 	   

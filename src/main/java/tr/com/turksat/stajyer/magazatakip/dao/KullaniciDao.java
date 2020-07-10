@@ -18,7 +18,7 @@ public class KullaniciDao {
         PreparedStatement ps = null;
         try {
 
-            con = Database.getConnection();
+            con = Database.getInstance().getConnection();
             ps = con.prepareStatement(
                     "select kullanici_adi, sifre from tb_kullanici where kullanici_adi= ? and sifre= ? ");
             ps.setString(1, kullanici.getKullaniciAdi());
@@ -46,7 +46,7 @@ public class KullaniciDao {
         List<Kullanici> kullaniciList = new ArrayList<>();
         try {
 
-            con = Database.getConnection();
+            con = Database.getInstance().getConnection();
             ps = con.prepareStatement(
                     "select id, kullanici_adi from stajyer.tb_kullanici ");
             ResultSet rs = ps.executeQuery();
