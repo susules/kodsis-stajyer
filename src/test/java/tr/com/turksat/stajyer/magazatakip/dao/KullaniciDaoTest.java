@@ -18,9 +18,10 @@ public class KullaniciDaoTest {
         Assert.assertEquals(1,1);
     }
 
+
     @Test
     public void testGetKullanicilar(){
-        KullaniciDao kullaniciDao = new KullaniciDao();
-        Assert.assertTrue(kullaniciDao.getKullanicilar().size()>0);
+            KullaniciDao kullaniciDao = new KullaniciDao();
+            Assert.assertTrue(kullaniciDao.getKullanicilar().size() > 0);
     }
 }
