@@ -1,3 +1,7 @@
+Proje
+run komutu: "clean install jetty:run"   
+url: http://localhost:9091/kodsis-stajyer/giris.jsf
+
 --Manuel Veritabanı ve rol oluşturulur
 
 CREATE ROLE stajyer LOGIN
