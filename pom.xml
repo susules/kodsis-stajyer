@@ -10,7 +10,6 @@
     <version>1.0-SNAPSHOT</version>
 
 
-
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <resources.directory>src/main/resources</resources.directory>
@@ -21,6 +20,11 @@
         <jsf.version>2.2.19</jsf.version>
         <jsf.extension.version>3.1.0</jsf.extension.version>
         <javax.servlet.version>3.0.1</javax.servlet.version>
+        <!-- Bu kısmı değiştir-->
+        <flyway.user>stajyer</flyway.user>
+        <flyway.password>1</flyway.password>
+        <flyway.schemas>stajyer</flyway.schemas>
+        <flyway.url>jdbc:postgresql://localhost:5432/stajyer</flyway.url>
     </properties>
 
 
@@ -82,16 +86,23 @@
             <scope>test</scope>
         </dependency>
 
+        <dependency>
+            <groupId>org.flywaydb</groupId>
+            <artifactId>flyway-core</artifactId>
+            <version>6.5.0</version>
+        </dependency>
+
     </dependencies>
 
-
     <build>
-
-
         <resources>
             <resource>
                 <directory>${resources.directory}</directory>
                 <filtering>true</filtering>
+                <includes>
+                    <include>*.*</include>
+                    <include>db/migration/*</include>
+                </includes>
             </resource>
             <resource>
                 <directory>${webapp.directory}</directory>
@@ -143,23 +154,23 @@
                 </configuration>
             </plugin>
 
-            <!--<plugin>-->
-            <!--<groupId>org.apache.maven.plugins</groupId>-->
-            <!--<artifactId>maven-surefire-plugin</artifactId>-->
-            <!--<version>2.20</version>-->
-            <!--<configuration>-->
-            <!--<forkCount>3</forkCount>-->
-            <!--<reuseForks>true</reuseForks>-->
-            <!--<argLine>-Xmx1024m -XX:MaxPermSize=256m</argLine>-->
-            <!--&lt;!&ndash;<testFailureIgnore>true</testFailureIgnore>&ndash;&gt;-->
-            <!--<includes>-->
-            <!--&lt;!&ndash; Sadece suite'te tanımlı test sınıflarını çalıştır. &ndash;&gt;-->
-            <!--<include>**/*TestSuite.java</include>-->
-            <!--&lt;!&ndash; Bütün servis testleri çalıştırır &ndash;&gt;-->
-            <!--<include>**/*Test.java</include>-->
-            <!--</includes>-->
-            <!--</configuration>-->
-            <!--</plugin>-->
+            <plugin>
+                <groupId>org.flywaydb</groupId>
+                <artifactId>flyway-maven-plugin</artifactId>
+                <version>6.5.0</version>
+                <configuration>
+                    <locations>
+                        <location>/db/migration</location>
+                    </locations>
+                    <url>url</url>
+                    <baselineOnMigrate>true</baselineOnMigrate>
+                    <user>databaseUser</user>
+                    <password>databasePassword</password>
+                    <schemas>
+                        <schema>schemaName</schema>
+                    </schemas>
+                </configuration>
+            </plugin>
         </plugins>
 
     </build>

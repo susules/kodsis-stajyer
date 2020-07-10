@@ -20,7 +20,7 @@ public class KullaniciDao {
 
             con = Database.getConnection();
             ps = con.prepareStatement(
-                    "select kullaniciAdi, sifre from kullanici where kullaniciAdi= ? and sifre= ? ");
+                    "select kullanici_adi, sifre from tb_kullanici where kullanici_adi= ? and sifre= ? ");
             ps.setString(1, kullanici.getKullaniciAdi());
             ps.setString(2, kullanici.getSifre());
             ResultSet rs = ps.executeQuery();
@@ -48,14 +48,14 @@ public class KullaniciDao {
 
             con = Database.getConnection();
             ps = con.prepareStatement(
-                    "select id, name from deneme.student ");
+                    "select id, kullanici_adi from stajyer.tb_kullanici ");
             ResultSet rs = ps.executeQuery();
             if (rs.next()) // found
             {
                 Kullanici kullanici = new Kullanici();
 
                 Long id  = rs.getLong("id");
-                String name = rs.getString("name");
+                String name = rs.getString("kullanici_adi");
                 kullanici.setKullaniciAdi(id!=null?id.toString():"null");
                 kullanici.setAdsoyad(name);
                 kullaniciList.add(kullanici);

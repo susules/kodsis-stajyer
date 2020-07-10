@@ -1,4 +1,4 @@
-Veritabanı ve rol
+--Manuel Veritabanı ve rol oluşturulur
 
 CREATE ROLE stajyer LOGIN
   ENCRYPTED PASSWORD '1'
@@ -9,10 +9,13 @@ CREATE DATABASE stajyer
        ENCODING = 'UTF8'
        TABLESPACE = pg_default
 	   CONNECTION LIMIT = -1;
-	   
---şema ve kullanıcı tablosunun oluşturulması
-	      
+
 CREATE SCHEMA IF NOT EXISTS stajyer ;
+	
+-- kullanıcı tablosunun ve verilerinin oluşturulması
+--aşağıdaki maven komutu çalıştırılarak db migrate olur
+--oluşturulan diğer sorgular V3__1_migration.sql diye artan sırada versiyonlanarak eklenir.
+-- compile flyway:migrate	      
 	   
 drop table if exists stajyer.tb_kullanici;
 	   
@@ -23,8 +26,10 @@ CREATE TABLE stajyer.tb_kullanici (
   CONSTRAINT kullanici_pkey PRIMARY KEY(id)
 ) ;
 
-
-ALTER TABLE stajyer.tb_kullanici
-  OWNER TO stajyer;
+ALTER TABLE stajyer.tb_kullanici OWNER TO stajyer;
+   
+  
+ INSERT INTO  stajyer.tb_kullanici ( id,  kullanici_adi,  sifre)  VALUES ( 1, 'admin', '1');
+ INSERT INTO  stajyer.tb_kullanici ( id,  kullanici_adi,  sifre)  VALUES ( 1, 'stajyer', '2');  
 	   
 	   
