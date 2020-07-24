@@ -1,0 +1,79 @@
+<!--<!DOCTYPE html>-->
+<!--<html xmlns="http://www.w3.org/1999/xhtml"-->
+      <!--xmlns:f="http://java.sun.com/jsf/core"-->
+      <!--xmlns:h="http://java.sun.com/jsf/html"-->
+      <!--xmlns:ui="http://java.sun.com/jsf/facelets"-->
+      <!--xmlns:p="http://primefaces.org/ui">-->
+<!--<h:body>-->
+    <!--<ui:composition template="/WEB-INF/templates/baseLayout.xhtml">-->
+        <!--<ui:define name="content">-->
+            <!--<h:form id="form">-->
+                <!--<p:panel header="Select a Location" style="margin-bottom:10px;">-->
+                    <!--<p:panelGrid id="grid" columns="2" cellpadding="5">-->
+                        <!--<p:outputLabel value="ÜRÜN TİPLERİ" for="urun"/>-->
+                        <!--<p:selectOneMenu id="urun" value="#{kullaniciForm.uruntipi}" converter="urunTipiConverter">-->
+
+                            <!--<f:selectItems value="#{kullaniciForm.urunTipleri}" var="tip" itemValue="#{tip}"-->
+                                           <!--itemLabel="#{tip.uruntipi}"/>-->
+                            <!--<p:ajax update="marka"-->
+                                    <!--listener="#{kullaniciForm.filtreMarka}"-->
+                                    <!--process="@this"-->
+                            <!--/>-->
+                        <!--</p:selectOneMenu>-->
+
+                        <!--<h:outputLabel value="MARKALAR" for="marka"/>-->
+                        <!--<p:selectOneMenu id="marka" value="#{kullaniciForm.markatipi}" converter="markaTipiConverter">-->
+                            <!--<f:selectItems value="#{kullaniciForm.markalar}" var="tip0" itemValue="#{tip0}"-->
+                                           <!--itemLabel="#{tip0.markatipi}"/>-->
+                        <!--</p:selectOneMenu>-->
+
+                    <!--</p:panelGrid>-->
+                <!--</p:panel>-->
+            <!--</h:form>-->
+        <!--</ui:define>-->
+    <!--</ui:composition>-->
+<!--</h:body>-->
+<!--</html>-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+<head/>
+<h:body>
+    <ui:composition template="/WEB-INF/templates/baseLayout.xhtml">
+        <div class="page-title">Başlık</div>
+        <ui:define name="content">
+            <h:body>
+                <p:dataTable var="urunTanimi" value="#{kullaniciForm.urunTanimiList}">
+                    <p:column headerText="ID">
+                        <h:outputText value="#{urunTanimi.id}"/>
+                    </p:column>
+                    <p:column headerText="ÜRÜN ÇEŞİT ID">
+                        <h:outputText value="#{urunTanimi.urunCesitId}"/>
+                    </p:column>
+                    <p:column headerText="ÜRÜN RENK">
+                        <h:outputText value="#{urunTanimi.urunRenk}"/>
+                    </p:column>
+                    <p:column headerText="ÜRÜN MARKA">
+                        <h:outputText value="#{urunTanimi.urunMarka}"/>
+                    </p:column>
+                    <p:column headerText="ÜRÜN MODEL">
+                        <h:outputText value="#{urunTanimi.urunModel}"/>
+                    </p:column>
+                    <p:column headerText="ÜRETİM TARİHİ">
+                        <h:outputText value="#{urunTanimi.uretimTarihi}"/>
+                    </p:column>
+                    <p:column headerText="SİSTEME EKLEME TARİHİ">
+                        <h:outputText value="#{urunTanimi.sistemeEklemeTarihi}"/>
+                    </p:column>
+                    <p:column headerText="GARANTİ YILI SÜRESİ">
+                        <h:outputText value="#{urunTanimi.urunGarantiYil}"/>
+                    </p:column>
+                </p:dataTable>
+            </h:body>
+        </ui:define>
+    </ui:composition>
+</h:body>
+</html>
