@@ -1,0 +1,37 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+<head/>
+<h:body>
+    <ui:composition template="/WEB-INF/templates/baseLayout.xhtml">
+        <div class="page-title">Başlık</div>
+        <ui:define name="content">
+            <h:body>
+                <p:dataTable var="urun" value="#{kullaniciForm.urunList}">
+                    <p:column headerText="ID">
+                        <h:outputText value="#{urun.id}"/>
+                    </p:column>
+                    <p:column headerText="ÜRÜN TANIM ID">
+                        <h:outputText value="#{urun.urunTanimiId}"/>
+                    </p:column>
+                    <p:column headerText="ÜRÜN FİYAT">
+                        <h:outputText value="#{urun.urunFiyat}"/>
+                    </p:column>
+                    <p:column headerText="ÜRÜN ADEDİ">
+                        <h:outputText value="#{urun.urunAdet}"/>
+                    </p:column>
+                    <p:column headerText="BAŞLANGIÇTAKİ ÜRÜN SAYISI">
+                        <h:outputText value="#{urun.baslangicUrunSayisi}"/>
+                    </p:column>
+                    <p:column headerText="İADE DURUMU">
+                        <h:outputText value="#{urun.iadeDurumu}"/>
+                    </p:column>
+                </p:dataTable>
+            </h:body>
+        </ui:define>
+    </ui:composition>
+</h:body>
+</html>

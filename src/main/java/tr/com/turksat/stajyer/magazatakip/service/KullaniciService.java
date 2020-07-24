@@ -20,7 +20,6 @@ public class KullaniciService {
     }
 
     public List<Kullanici> getKullanicilar() {
-
         return kullaniciDao.getKullanicilar();
     }
 }

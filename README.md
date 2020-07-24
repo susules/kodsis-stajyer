@@ -32,8 +32,6 @@ dao : Veritabanı ile ilgili tüm işler
 domain : entity ve modeller
 jsfbean : jsf bean
 service  : iş mantıkları
-
-
 web : arayüz 
 
 web->jsfbean(domain)->service(dao,domain)

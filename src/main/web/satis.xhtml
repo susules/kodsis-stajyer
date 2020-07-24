@@ -1,0 +1,34 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+<head/>
+<h:body>
+    <ui:composition template="/WEB-INF/templates/baseLayout.xhtml">
+        <div class="page-title">Başlık</div>
+        <ui:define name="content">
+            <h:body>
+                <p:dataTable var="satis" value="#{kullaniciForm.satisList}">
+                    <p:column headerText="ID">
+                        <h:outputText value="#{satis.id}"/>
+                    </p:column>
+                    <p:column headerText="URUN ID">
+                        <h:outputText value="#{satis.urunId}"/>
+                    </p:column>
+                    <p:column headerText="HESAP ID">
+                        <h:outputText value="#{satis.hesapId}"/>
+                    </p:column>
+                    <p:column headerText="SATIŞ TARİHİ">
+                        <h:outputText value="#{satis.satisTarihi}"/>
+                    </p:column>
+                    <p:column headerText="ÖDEME ŞEKLİ">
+                        <h:outputText value="#{satis.odemeSekli}"/>
+                    </p:column>
+                </p:dataTable>
+            </h:body>
+        </ui:define>
+    </ui:composition>
+</h:body>
+</html>

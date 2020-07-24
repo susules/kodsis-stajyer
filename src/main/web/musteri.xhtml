@@ -1,0 +1,44 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+<head/>
+<h:body>
+    <ui:composition template="/WEB-INF/templates/baseLayout.xhtml">
+        <div class="page-title">Başlık</div>
+        <ui:define name="content">
+            <h:body>
+                <p:dataTable var="musteri" value="#{kullaniciForm.musteriList}">
+                    <p:column headerText="ID">
+                        <h:outputText value="#{musteri.id}"/>
+                    </p:column>
+                    <p:column headerText="MÜŞTERİ AD">
+                        <h:outputText value="#{musteri.MAd}"/>
+                    </p:column>
+                    <p:column headerText="MÜŞTERİ SOYAD">
+                        <h:outputText value="#{musteri.MSoyad}"/>
+                    </p:column>
+                    <p:column headerText="MÜŞTERİ TELEFON">
+                        <h:outputText value="#{musteri.MTelefon}"/>
+                    </p:column>
+                    <p:column headerText="MÜŞTERİ EMAİL">
+                        <h:outputText value="#{musteri.MEmail}"/>
+                    </p:column>
+                    <p:column headerText="MÜŞTERİ ADRES">
+                        <h:outputText value="#{musteri.MAdres}"/>
+                    </p:column>
+                    <p:column headerText="MÜŞTERİ CİNSİYET">
+                        <h:outputText value="#{musteri.MCinsiyet}"/>
+                    </p:column>
+                    <p:column headerText="MÜŞTERİ YAŞ">
+                        <h:outputText value="#{musteri.MYas}"/>
+                    </p:column>
+                </p:dataTable>
+            </h:body>
+        </ui:define>
+    </ui:composition>
+</h:body>
+</html>
+
