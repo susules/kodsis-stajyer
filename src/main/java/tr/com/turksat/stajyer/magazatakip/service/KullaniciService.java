@@ -5,9 +5,6 @@ import tr.com.turksat.stajyer.magazatakip.domain.Kullanici;
 
 import java.util.List;
 
-/**
- * Created by scinkir on 25.06.2015.
- */
 public class KullaniciService {
     KullaniciDao kullaniciDao;
 

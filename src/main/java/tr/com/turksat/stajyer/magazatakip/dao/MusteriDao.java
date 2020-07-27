@@ -90,29 +90,6 @@ public class MusteriDao {
         return musteriList;
     }
 
-//    public boolean musteriSil(Musteri musteri) {
-//        Connection con = null;
-//        PreparedStatement ps = null;
-//
-//        try {  con = Database.getInstance().getConnection();
-//            ps = con.prepareStatement ("delete from musteri where id= ?");
-//
-//        } catch (Exception ex) {
-//            System.out.println("hatalı islem");
-//        } finally {
-//            try {
-//                if (ps != null)
-//                    ps.close();
-//            } catch (Exception se2) {
-//            }// nothing we can do
-//            try {
-//                if (con != null)
-//                    con.close();
-//            } catch (Exception se) {
-//                se.printStackTrace();
-//            }//end finally try
-//        }return false;
-//    }
 public boolean musteriSil(Musteri musteri) {
     boolean basariliMi = false;
     String sqlQuery = "delete from musteri where id= ?";

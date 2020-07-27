@@ -2,13 +2,6 @@ package tr.com.turksat.stajyer.magazatakip.jsfbean;
 
 import tr.com.turksat.stajyer.magazatakip.domain.*;
 import tr.com.turksat.stajyer.magazatakip.service.KullaniciService;
-import tr.com.turksat.stajyer.magazatakip.service.MusteriService;
-import tr.com.turksat.stajyer.magazatakip.service.MusteriHesabiService;
-import tr.com.turksat.stajyer.magazatakip.service.SatisService;
-import tr.com.turksat.stajyer.magazatakip.service.UrunCesidiService;
-import tr.com.turksat.stajyer.magazatakip.service.UrunTanimiService;
-import tr.com.turksat.stajyer.magazatakip.service.UrunService;
-
 import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
 import javax.faces.event.AjaxBehaviorEvent;
@@ -41,8 +34,7 @@ public class KullaniciForm implements Serializable {
         kullanici = new Kullanici();
         modeltipi = new ModelTipi();
         markatipi = new MarkaTipi();
-//        markalar= new KullaniciService().getMarkalar(uruntipi);
-//        urunTipleri=new KullaniciService().getUrunTipleri();
+
         UrunTipi x = new UrunTipi();
         x.setUruntipi("deneme");
         x.setId(1);
