@@ -2,7 +2,6 @@ package tr.com.turksat.stajyer.magazatakip.domain;
 
 import java.sql.Date;
 
-
 public class UrunTanimi {
 
     private Integer id = -1;

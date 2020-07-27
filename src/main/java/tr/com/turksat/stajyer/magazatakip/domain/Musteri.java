@@ -3,13 +3,13 @@ package tr.com.turksat.stajyer.magazatakip.domain;
 public class Musteri {
 
     private Integer id = -1;
-    private String MAd;
-    private String MSoyad;
-    private Integer MTelefon;
-    private String MEmail;
-    private String MAdres;
-    private String MCinsiyet;
-    private Integer MYas;
+    private String musteriAd;
+    private String musteriSoyad;
+    private Integer musteriTelefon;
+    private String musteriEmail;
+    private String musteriAdres;
+    private String musteriCinsiyet;
+    private Integer musteriYas;
 
     public Musteri() {
 
@@ -23,59 +23,59 @@ public class Musteri {
         this.id = id;
     }
 
-    public String getMAd() {
-        return MAd;
+    public String getMusteriAd() {
+        return musteriAd;
     }
 
-    public void setMAd(String MAd) {
-        this.MAd = MAd;
+    public void setMusteriAd(String musteriAd) {
+        this.musteriAd = musteriAd;
     }
 
-    public String getMSoyad() {
-        return MSoyad;
+    public String getMusteriSoyad() {
+        return musteriSoyad;
     }
 
-    public void setMSoyad(String MSoyad) {
-        this.MSoyad = MSoyad;
+    public void setMusteriSoyad(String musteriSoyad) {
+        this.musteriSoyad = musteriSoyad;
     }
 
-    public Integer getMTelefon() {
-        return MTelefon;
+    public Integer getMusteriTelefon() {
+        return musteriTelefon;
     }
 
-    public void setMTelefon(Integer MTelefon) {
-        this.MTelefon = MTelefon;
+    public void setMusteriTelefon(Integer musteriTelefon) {
+        this.musteriTelefon = musteriTelefon;
     }
 
-    public String getMEmail() {
-        return MEmail;
+    public String getMusteriEmail() {
+        return musteriEmail;
     }
 
-    public void setMEmail(String MEmail) {
-        this.MEmail = MEmail;
+    public void setMusteriEmail(String musteriEmail) {
+        this.musteriEmail = musteriEmail;
     }
 
-    public String getMAdres() {
-        return MAdres;
+    public String getMusteriAdres() {
+        return musteriAdres;
     }
 
-    public void setMAdres(String MAdres) {
-        this.MAdres = MAdres;
+    public void setMusteriAdres(String musteriAdres) {
+        this.musteriAdres = musteriAdres;
     }
 
-    public String getMCinsiyet() {
-        return MCinsiyet;
+    public String getMusteriCinsiyet() {
+        return musteriCinsiyet;
     }
 
-    public void setMCinsiyet(String MCinsiyet) {
-        this.MCinsiyet = MCinsiyet;
+    public void setMusteriCinsiyet(String musteriCinsiyet) {
+        this.musteriCinsiyet = musteriCinsiyet;
     }
 
-    public Integer getMYas() {
-        return MYas;
+    public Integer getMusteriYas() {
+        return musteriYas;
     }
 
-    public void setMYas(Integer Myas) {
-        this.MYas = MYas;
+    public void setMusteriYas(Integer musteriYas) {
+        this.musteriYas = musteriYas;
     }
 }

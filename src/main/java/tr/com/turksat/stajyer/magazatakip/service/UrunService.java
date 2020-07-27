@@ -11,7 +11,6 @@ public class UrunService {
 
     public UrunService() {
         urunDao = new UrunDao();
-
     }
 
     public boolean urunSil(Urun urun) {
@@ -21,5 +20,13 @@ public class UrunService {
     public List<Urun> getUrun() {
 
         return urunDao.getUrun();
+
+    }
+    public Urun urunEkle(Urun urun) {
+        return urunDao.urunEkle(urun);
+    }
+
+    public void getUpdate(List<Urun> urunList) {
+        urunDao.urunGuncelle(urunList);
     }
 }

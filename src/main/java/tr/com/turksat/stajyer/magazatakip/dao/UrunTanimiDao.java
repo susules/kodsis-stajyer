@@ -66,8 +66,6 @@ public class UrunTanimiDao {
                     urunTanimi.setUretimTarihi(rs.getDate(6));
                     urunTanimi.setSistemeEklemeTarihi(rs.getDate(7));
                     urunTanimi.setUrunGarantiYil(rs.getInt(8));
-
-
                     urunTanimiList.add(urunTanimi);
                 }
             } catch (Exception e) {

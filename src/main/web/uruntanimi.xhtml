@@ -46,7 +46,7 @@
         <div class="page-title">Başlık</div>
         <ui:define name="content">
             <h:body>
-                <p:dataTable var="urunTanimi" value="#{kullaniciForm.urunTanimiList}">
+                <p:dataTable var="urunTanimi" value="#{urunTanimiForm.urunTanimiList}">
                     <p:column headerText="ID">
                         <h:outputText value="#{urunTanimi.id}"/>
                     </p:column>
@@ -68,7 +68,7 @@
                     <p:column headerText="SİSTEME EKLEME TARİHİ">
                         <h:outputText value="#{urunTanimi.sistemeEklemeTarihi}"/>
                     </p:column>
-                    <p:column headerText="GARANTİ YILI SÜRESİ">
+                    <p:column headerText="GARANTİ YIL SÜRESİ">
                         <h:outputText value="#{urunTanimi.urunGarantiYil}"/>
                     </p:column>
                 </p:dataTable>

@@ -4,6 +4,7 @@ import tr.com.turksat.stajyer.magazatakip.domain.Musteri;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -17,13 +18,13 @@ public class MusteriDao {
             con = Database.getInstance().getConnection();
             PreparedStatement preparedStmt = con.prepareStatement(query);
             preparedStmt.setInt(1, musteri.getId());
-            preparedStmt.setString(2, musteri.getMAd());
-            preparedStmt.setString(3, musteri.getMSoyad());
-            preparedStmt.setInt(4, musteri.getMTelefon());
-            preparedStmt.setString(5, musteri.getMEmail());
-            preparedStmt.setString(6, musteri.getMAdres());
-            preparedStmt.setString(7, musteri.getMCinsiyet());
-            preparedStmt.setInt(8, musteri.getMYas());
+            preparedStmt.setString(2, musteri.getMusteriAd());
+            preparedStmt.setString(3, musteri.getMusteriSoyad());
+            preparedStmt.setInt(4, musteri.getMusteriTelefon());
+            preparedStmt.setString(5, musteri.getMusteriEmail());
+            preparedStmt.setString(6, musteri.getMusteriAdres());
+            preparedStmt.setString(7, musteri.getMusteriCinsiyet());
+            preparedStmt.setInt(8, musteri.getMusteriYas());
 
 
             preparedStmt.executeUpdate(query);
@@ -39,9 +40,11 @@ public class MusteriDao {
             try {if (con != null)
                 con.close();
             } catch (Exception ex2) {
-                ex2.printStackTrace();}//end finally try
+                ex2.printStackTrace();
+            }//end finally try
             Database.close(con);
-        } return musteri;
+        }
+        return musteri;
     }
 
     public List<Musteri> getMusteri() {
@@ -57,13 +60,14 @@ public class MusteriDao {
             {
                 Musteri musteri = new Musteri();
                 musteri.setId(rs.getInt(1));
-                musteri.setMAd(rs.getString(2));
-                musteri.setMSoyad(rs.getString(3));
-                musteri.setMTelefon(rs.getInt(4));
-                musteri.setMEmail(rs.getString(5));
-                musteri.setMAdres(rs.getString(6));
-                musteri.setMCinsiyet(rs.getString(7));
-                musteri.setMYas(rs.getInt(8));
+                musteri.setMusteriAd(rs.getString(2));
+                musteri.setMusteriSoyad(rs.getString(3));
+                musteri.setMusteriTelefon(rs.getInt(4));
+                musteri.setMusteriEmail(rs.getString(5));
+                musteri.setMusteriAdres(rs.getString(6));
+                musteri.setMusteriCinsiyet(rs.getString(7));
+                musteri.setMusteriYas(rs.getInt(8));
+
                 musteriList.add(musteri);
             }
         } catch (Exception e) {
@@ -86,27 +90,68 @@ public class MusteriDao {
         return musteriList;
     }
 
-    public boolean musteriSil(Musteri musteri) {
-        Connection con = null;
-        PreparedStatement ps = null;
+//    public boolean musteriSil(Musteri musteri) {
+//        Connection con = null;
+//        PreparedStatement ps = null;
+//
+//        try {  con = Database.getInstance().getConnection();
+//            ps = con.prepareStatement ("delete from musteri where id= ?");
+//
+//        } catch (Exception ex) {
+//            System.out.println("hatalı islem");
+//        } finally {
+//            try {
+//                if (ps != null)
+//                    ps.close();
+//            } catch (Exception se2) {
+//            }// nothing we can do
+//            try {
+//                if (con != null)
+//                    con.close();
+//            } catch (Exception se) {
+//                se.printStackTrace();
+//            }//end finally try
+//        }return false;
+//    }
+public boolean musteriSil(Musteri musteri) {
+    boolean basariliMi = false;
+    String sqlQuery = "delete from musteri where id= ?";
+    try (Connection connection = Database.getInstance().getConnection();
+         PreparedStatement preparedStatement = connection
+                 .prepareStatement(sqlQuery)) {
 
-        try {  con = Database.getInstance().getConnection();
-            ps = con.prepareStatement ("delete from musteri where id= ?");
+        preparedStatement.setInt(1, musteri.getId());
 
-        } catch (Exception ex) {
-            System.out.println("hatalı islem");
-        } finally {
-            try {
-                if (ps != null)
-                    ps.close();
-            } catch (Exception se2) {
-            }// nothing we can do
-            try {
-                if (con != null)
-                    con.close();
-            } catch (Exception se) {
-                se.printStackTrace();
-            }//end finally try
-        }return false;
+        int rowCount = preparedStatement.executeUpdate();
+        basariliMi = true;
+    } catch (SQLException e) {
+        System.out.println(e);
+    }
+    return basariliMi;
+   }
+    public void musteriGuncelle(List<Musteri> musteriList) {
+        String sqlQuery = "UPDATE musteri SET ad = ? , soyad = ? , telefon = ? , e_mail = ? , adres = ? , cinsiyet = ? , yas = ?  WHERE id = ?";
+
+        int affectedrows = 0;
+
+        try (Connection connection = Database.getInstance().getConnection();
+             PreparedStatement pstmt = connection.prepareStatement(sqlQuery)) {
+
+            for (Musteri musteri:musteriList) {
+                pstmt.setString(1, musteri.getMusteriAd());
+                pstmt.setString(2, musteri.getMusteriSoyad());
+                pstmt.setInt(3, musteri.getMusteriTelefon());
+                pstmt.setString(4, musteri.getMusteriEmail());
+                pstmt.setString(5, musteri.getMusteriAdres());
+                pstmt.setString(6, musteri.getMusteriCinsiyet());
+                pstmt.setInt(7, musteri.getMusteriYas());
+                pstmt.setInt(8, musteri.getId());
+
+                affectedrows = pstmt.executeUpdate();
+            }
+
+        } catch (SQLException ex) {
+            System.out.println(ex.getMessage());
+        }
     }
 }

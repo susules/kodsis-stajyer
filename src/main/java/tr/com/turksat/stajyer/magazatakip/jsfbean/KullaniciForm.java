@@ -20,38 +20,16 @@ import java.util.List;
 public class KullaniciForm implements Serializable {
 
     KullaniciService kullaniciService = new KullaniciService();
-    MusteriService musteriService= new MusteriService();
-    MusteriHesabiService musteriHesabiService= new MusteriHesabiService();
-    SatisService satisService= new SatisService();
-    UrunCesidiService urunCesidiService= new UrunCesidiService();
-    UrunTanimiService urunTanimiService= new UrunTanimiService();
-    UrunService urunService= new UrunService();
-
     List<MarkaTipi> markalar = new ArrayList();
     List<UrunTipi> urunTipleri = new ArrayList();
     List<Kullanici> kullanicilar = new ArrayList<>();
-    List<Musteri> musteriList = new ArrayList<>();
-    List<MusteriHesabi> musteriHesabiList = new ArrayList<>();
-    List<Satis> satisList = new ArrayList<>();
-    List<UrunCesidi> urunCesitList = new ArrayList<>();
-    List<UrunTanimi> urunTanimiList = new ArrayList<>();
-    List<Urun> urunList = new ArrayList<>();
 
     private Kullanici kullanici;
-    private Musteri musteri;
-    private MusteriHesabi hesap;
-    private Satis satis;
-    private UrunCesidi urunCesidi;
-    private UrunTanimi urunTanimi;
-    private Urun urun;
-
-
     private String silinecekUrunTipi = "";
     private String urunTipiid = "";
     private UrunTipi uruntipi;
     private ModelTipi modeltipi = new ModelTipi();
     private MarkaTipi markatipi = new MarkaTipi();
-
 
     public KullaniciForm() {
 
@@ -63,14 +41,6 @@ public class KullaniciForm implements Serializable {
         kullanici = new Kullanici();
         modeltipi = new ModelTipi();
         markatipi = new MarkaTipi();
-        musteri = new Musteri();
-        hesap = new MusteriHesabi();
-        urunTanimi = new UrunTanimi();
-        urunCesidi = new UrunCesidi();
-        satis= new Satis();
-        urun = new Urun();
-
-
 //        markalar= new KullaniciService().getMarkalar(uruntipi);
 //        urunTipleri=new KullaniciService().getUrunTipleri();
         UrunTipi x = new UrunTipi();
@@ -82,14 +52,7 @@ public class KullaniciForm implements Serializable {
         urunTipleri.add(x);
         urunTipleri.add(y);
 
-
         kullanicilar = kullaniciService.getKullanicilar();
-        musteriList = musteriService.getMusteri();
-        musteriHesabiList = musteriHesabiService.getHesap();
-        urunCesitList = urunCesidiService.getUrunCesidi();
-        urunTanimiList = urunTanimiService.getUrunTanimi();
-        satisList = satisService.getSatis();
-        urunList = urunService.getUrun();
     }
 
     public Kullanici getKullanici() {
@@ -230,36 +193,5 @@ public class KullaniciForm implements Serializable {
     public List<Kullanici> getKullanicilar() {
         kullanicilar = kullaniciService.getKullanicilar();
         return kullanicilar;
-    }
-
-    public List<Musteri> getMusteriList() {
-        musteriList = musteriService.getMusteri();
-        return musteriList;
-    }
-
-    public List<MusteriHesabi> getMusteriHesabiList() {
-        musteriHesabiList=musteriHesabiService.getHesap();
-        return musteriHesabiList;
-    }
-
-    public List<Satis> getSatisList() {
-        satisList=satisService.getSatis();
-        return satisList;
-    }
-
-    public List<UrunCesidi> getUrunCesitList() {
-        urunCesitList=urunCesidiService.getUrunCesidi();
-        return urunCesitList;
-    }
-
-    public List<UrunTanimi> getUrunTanimiList() {
-        urunTanimiList=urunTanimiService.getUrunTanimi();
-        return urunTanimiList;
-    }
-
-    public List<Urun> getUrunList() {
-        urunList=urunService.getUrun();
-        return urunList;
-
     }
 }

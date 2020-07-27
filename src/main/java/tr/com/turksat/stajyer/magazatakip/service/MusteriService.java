@@ -21,4 +21,12 @@ public class MusteriService {
     public List<Musteri> getMusteri() {
         return musteriDao.getMusteri();
     }
+
+    public Musteri musteriEkle(Musteri musteri) {
+        return musteriDao.musteriEkle(musteri);
+    }
+
+    public void getUpdate(List<Musteri> musteriList) {
+        musteriDao.musteriGuncelle(musteriList);
+    }
 }

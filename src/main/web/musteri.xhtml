@@ -3,39 +3,126 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://java.sun.com/jsf/html"
       xmlns:ui="http://java.sun.com/jsf/facelets"
-      xmlns:p="http://primefaces.org/ui">
+      xmlns:p="http://primefaces.org/ui" xmlns:f="http://xmlns.jcp.org/jsf/core">
 <head/>
 <h:body>
     <ui:composition template="/WEB-INF/templates/baseLayout.xhtml">
-        <div class="page-title">Başlık</div>
+        <div class="page-title">Müşteri</div>
         <ui:define name="content">
             <h:body>
-                <p:dataTable var="musteri" value="#{kullaniciForm.musteriList}">
-                    <p:column headerText="ID">
-                        <h:outputText value="#{musteri.id}"/>
-                    </p:column>
-                    <p:column headerText="MÜŞTERİ AD">
-                        <h:outputText value="#{musteri.MAd}"/>
-                    </p:column>
-                    <p:column headerText="MÜŞTERİ SOYAD">
-                        <h:outputText value="#{musteri.MSoyad}"/>
-                    </p:column>
-                    <p:column headerText="MÜŞTERİ TELEFON">
-                        <h:outputText value="#{musteri.MTelefon}"/>
-                    </p:column>
-                    <p:column headerText="MÜŞTERİ EMAİL">
-                        <h:outputText value="#{musteri.MEmail}"/>
-                    </p:column>
-                    <p:column headerText="MÜŞTERİ ADRES">
-                        <h:outputText value="#{musteri.MAdres}"/>
-                    </p:column>
-                    <p:column headerText="MÜŞTERİ CİNSİYET">
-                        <h:outputText value="#{musteri.MCinsiyet}"/>
-                    </p:column>
-                    <p:column headerText="MÜŞTERİ YAŞ">
-                        <h:outputText value="#{musteri.MYas}"/>
-                    </p:column>
-                </p:dataTable>
+                <h:form id="musteriler">
+                    <p:growl id="growl" sticky="true" />
+                    <p:dataTable id="musteriListId" var="musteri" value="#{musteriForm.musteriList}">
+                        <p:column headerText="Id">
+                            <h:outputText value="#{musteri.id}"/>
+                        </p:column>
+
+                        <p:column headerText="Ad">
+                            <p:inputText id="musteriAdInput" value="#{musteri.musteriAd}"/>
+                        </p:column>
+
+                        <p:column headerText="Soyad">
+                            <p:inputText id="musteriSoyadInput" value="#{musteri.musteriSoyad}"/>
+                        </p:column>
+
+                        <p:column headerText="Telefon">
+                            <p:inputText id="musteriTelefonInput" value="#{musteri.musteriTelefon}"/>
+                        </p:column>
+
+                        <p:column headerText="Email">
+                            <p:inputText id="musteriEmailInput" value="#{musteri.musteriEmail}"/>
+                        </p:column>
+
+                        <p:column headerText="Adres">
+                            <p:inputText id="musteriAdresInput" value="#{musteri.musteriAdres}"/>
+                        </p:column>
+                        <p:column headerText="Cinsiyet">
+                            <p:inputText id="musteriCinsiyetInput" value="#{musteri.musteriCinsiyet}"/>
+                        </p:column>
+                        <p:column headerText="Yaş">
+                            <p:inputText id="musteriYasInput" value="#{musteri.musteriYas}"/>
+                        </p:column>
+
+                        <p:column>
+                            <p:commandButton update="musteriListId" value="Sil" icon="ui-icon-closethick"
+                                             action="#{musteriForm.getSil(musteri)}"
+                                             styleClass="ui-priority-primary">
+                            </p:commandButton>
+                        </p:column>
+                    </p:dataTable>
+                    <br/>
+                    <p:commandButton style="float: right" id="save" value="Güncelle" tyleClass="ui-priority-primary"
+                                     action="#{musteriForm.getUpdate}" icon="ui-icon-disk" update="musteriListId">
+                        <f:ajax execute="@form" render="@form"/>
+                    </p:commandButton>
+                </h:form>
+
+                <h:form id="add">
+                <h:panelGrid columns="3" cellpadding="5" style="margin: 0 auto;">
+
+                    <p:outputLabel for="musteriAd" value="Ad" />
+                    <p:inputText  id="musteriAd" value="#{musteriForm.musteri.musteriAd}" style="width:150px"/>
+                    <p:message for  ="musteriAd" />
+
+                    <p:outputLabel for="musteriSoyad" value="Soyad" />
+                    <p:inputText  id="musteriSoyad" value="#{musteriForm.musteri.musteriSoyad}" style="width:150px"/>
+                    <p:message for  ="musteriSoyad" />
+
+                    <p:outputLabel for="musteriTelefon" value="Telefon" />
+                    <p:inputNumber id="musteriTelefon" value="#{musteriForm.musteri.musteriTelefon}" padControl="false"
+                                 onkeydown="return event.keyCode &gt;= 48 &amp;&amp; event.keyCode &lt;= 57 || event.keyCode == 8" style="width:150px"/>
+                    <p:message for="musteriTelefon" />
+
+                    <p:outputLabel for="musteriEmail" value="E_mail" />
+                    <p:inputText id="musteriEmail" value="#{musteriForm.musteri.musteriEmail}" style="width:150px"/>
+                    <p:message for="musteriEmail" />
+
+                    <p:outputLabel for="musteriAdres" value="Adres" />
+                    <p:inputText id="musteriAdres" value="#{musteriForm.musteri.musteriAdres}" style="width:150px"/>
+                    <p:message for="musteriAdres" />
+
+                    <p:outputLabel for="musteriCinsiyet" value="Cinsiyet" />
+                    <p:inputText id="musteriCinsiyet" value="#{musteriForm.musteri.musteriCinsiyet}" style="width:150px"/>
+                    <p:message for="musteriCinsiyet" />
+
+                    <p:outputLabel for="musteriYas" value="Yas" />
+                    <p:inputNumber id="musteriYas" value="#{musteriForm.musteri.musteriYas}" padControl="false"
+                                   onkeydown="return event.keyCode &gt;= 48 &amp;&amp; event.keyCode &lt;= 57 || event.keyCode == 8" style="width:150px"/>
+                    <p:message for="musteriYas" />
+
+
+                    <p:commandButton update="@form :musteriler:musteriListId" value="Kaydet" action="#{musteriForm.getAdd}">
+                    </p:commandButton>
+                </h:panelGrid>
+                </h:form>
+
+                <!--<p:dataTable var="musteri" value="#{musteriForm.musteriList}">-->
+                    <!--<p:column headerText="ID">-->
+                        <!--<h:outputText value="#{musteri.id}"/>-->
+                    <!--</p:column>-->
+                    <!--<p:column headerText="MÜŞTERİ AD">-->
+                        <!--<h:outputText value="#{musteri.MAd}"/>-->
+                    <!--</p:column>-->
+                    <!--<p:column headerText="MÜŞTERİ SOYAD">-->
+                        <!--<h:outputText value="#{musteri.MSoyad}"/>-->
+                    <!--</p:column>-->
+                    <!--<p:column headerText="MÜŞTERİ TELEFON">-->
+                        <!--<h:outputText value="#{musteri.MTelefon}"/>-->
+                    <!--</p:column>-->
+                    <!--<p:column headerText="MÜŞTERİ EMAİL">-->
+                        <!--<h:outputText value="#{musteri.MEmail}"/>-->
+                    <!--</p:column>-->
+                    <!--<p:column headerText="MÜŞTERİ ADRES">-->
+                        <!--<h:outputText value="#{musteri.MAdres}"/>-->
+                    <!--</p:column>-->
+                    <!--<p:column headerText="MÜŞTERİ CİNSİYET">-->
+                        <!--<h:outputText value="#{musteri.MCinsiyet}"/>-->
+                    <!--</p:column>-->
+                    <!--<p:column headerText="MÜŞTERİ YAŞ">-->
+                        <!--<h:outputText value="#{musteri.MYas}"/>-->
+                    <!--</p:column>-->
+                <!--</p:dataTable>-->
+
             </h:body>
         </ui:define>
     </ui:composition>

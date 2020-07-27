@@ -50,7 +50,7 @@ public class KullaniciDao {
             ps = con.prepareStatement(
                     "select id, kullanici_adi from stajyer.tb_kullanici ");
             ResultSet rs = ps.executeQuery();
-            if (rs.next()) // found
+            while (rs.next()) // found
             {
                 Kullanici kullanici = new Kullanici();
 
@@ -68,7 +68,6 @@ public class KullaniciDao {
         } finally {
             Database.close(con);
         }
-
 
         return kullaniciList;
     }
