@@ -3,33 +3,106 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://java.sun.com/jsf/html"
       xmlns:ui="http://java.sun.com/jsf/facelets"
-      xmlns:p="http://primefaces.org/ui">
+      xmlns:p="http://primefaces.org/ui" xmlns:f="http://xmlns.jcp.org/jsf/core">
 <head/>
 <h:body>
     <ui:composition template="/WEB-INF/templates/baseLayout.xhtml">
-        <div class="page-title">Başlık</div>
+        <div class="page-title">Ürün</div>
         <ui:define name="content">
             <h:body>
-                <p:dataTable var="urun" value="#{kullaniciForm.urunList}">
-                    <p:column headerText="ID">
-                        <h:outputText value="#{urun.id}"/>
-                    </p:column>
-                    <p:column headerText="ÜRÜN TANIM ID">
-                        <h:outputText value="#{urun.urunTanimiId}"/>
-                    </p:column>
-                    <p:column headerText="ÜRÜN FİYAT">
-                        <h:outputText value="#{urun.urunFiyat}"/>
-                    </p:column>
-                    <p:column headerText="ÜRÜN ADEDİ">
-                        <h:outputText value="#{urun.urunAdet}"/>
-                    </p:column>
-                    <p:column headerText="BAŞLANGIÇTAKİ ÜRÜN SAYISI">
-                        <h:outputText value="#{urun.baslangicUrunSayisi}"/>
-                    </p:column>
-                    <p:column headerText="İADE DURUMU">
-                        <h:outputText value="#{urun.iadeDurumu}"/>
-                    </p:column>
-                </p:dataTable>
+                <h:form id="urunler">
+                    <p:growl id="growl" sticky="true" />
+                    <p:dataTable id="urunListId" var="urun" value="#{urunForm.urunList}">
+                        <p:column headerText="Id">
+                            <h:outputText value="#{urun.id}"/>
+                        </p:column>
+
+                        <p:column headerText="Ürün Tanımı Id">
+                            <p:inputText id="urunTanimiIdInput" value="#{urun.urunTanimiId}"/>
+                        </p:column>
+
+                        <p:column headerText="Ürün Fiyat">
+                            <p:inputText id="urunFiyatInput" value="#{urun.urunFiyat}"/>
+                        </p:column>
+
+                        <p:column headerText="Ürün Adet">
+                            <p:inputText id="urunAdetInput" value="#{urun.urunAdet}"/>
+                        </p:column>
+
+                        <p:column headerText="Başlangıç Ürün Sayısı">
+                            <p:inputText id="baslangicUrunSayisiInput" value="#{urun.baslangicUrunSayisi}"/>
+                        </p:column>
+
+                        <p:column headerText="İade Durumu">
+                            <p:inputText id="iadeDurumuInput" value="#{urun.iadeDurumu}"/>
+                        </p:column>
+
+                        <p:column>
+                            <p:commandButton update="urunListId" value="Sil" icon="ui-icon-closethick"
+                                             action="#{urunForm.getSil(urun)}"
+                                             styleClass="ui-priority-primary">
+                            </p:commandButton>
+                        </p:column>
+                    </p:dataTable>
+                    <br/>
+                    <p:commandButton style="float: right" id="save" value="Güncelle" tyleClass="ui-priority-primary"
+                                     action="#{urunForm.getUpdate}" icon="ui-icon-disk" update="urunListId">
+                        <f:ajax execute="@form" render="@form"/>
+                    </p:commandButton>
+                </h:form>
+
+                <h:form id="add">
+                    <h:panelGrid columns="3" cellpadding="5" style="margin: 0 auto;">
+
+                        <!--<p:outputLabel for="urunTanimi" value="Ürün Tanımı"/>-->
+                        <!--<p:selectOneMenu id="urunTanimi" value="#{urunTanimiForm.urunTanimi}" style="width:150px">-->
+                            <!--<f:selectItem itemLabel="Seçiniz" itemValue="" noSelectionOption="true"/>-->
+                            <!--<f:selectItems value="#{urunTanimiForm.urunTanimiList}"/>-->
+                        <!--</p:selectOneMenu>-->
+
+                        <p:outputLabel for="urunFiyat" value="Ürün Fiyat" />
+                        <p:inputNumber id="urunFiyat" value="#{urunForm.urun.urunFiyat}" padControl="false" style="width:150px" />
+                        <p:message for="urunFiyat" />
+
+                        <p:outputLabel for="urunAdet" value="Ürün Adet" />
+                        <p:inputNumber  id="urunAdet" value="#{urunForm.urun.urunAdet}" padControl="false" style="width:150px"/>
+                        <p:message for  ="urunAdet" />
+
+                        <p:outputLabel for="baslangicUrunSayisi" value="Başlangıç Ürün Sayısı" />
+                        <p:inputText id="baslangicUrunSayisi" value="#{urunForm.urun.baslangicUrunSayisi}" padControl="false"
+                                       onkeydown="return event.keyCode &gt;= 48 &amp;&amp; event.keyCode &lt;= 57 || event.keyCode == 8" style="width:150px"/>
+                        <p:message for="baslangicUrunSayisi" />
+
+                        <p:outputLabel for="iadeDurumu" value="İade Durumu" />
+                        <p:inputText id="iadeDurumu" value="#{urunForm.urun.iadeDurumu}" style="width:150px"/>
+                        <p:message for="iadeDurumu" />
+
+                        <p:commandButton update="@form :urunler:urunListId" value="Kaydet" action="#{urunForm.getAdd}">
+                        </p:commandButton>
+                    </h:panelGrid>
+                </h:form>
+
+                <!--<p:dataTable var="urun" value="#{urunForm.urunList}">-->
+                    <!--<p:column headerText="ID">-->
+                        <!--<h:outputText value="#{urun.id}"/>-->
+                    <!--</p:column>-->
+                    <!--<p:column headerText="ÜRÜN TANIM ID">-->
+                        <!--<h:outputText value="#{urun.urunTanimiId}"/>-->
+                    <!--</p:column>-->
+                    <!--<p:column headerText="ÜRÜN FİYAT">-->
+                        <!--<h:outputText value="#{urun.urunFiyat}"/>-->
+                    <!--</p:column>-->
+                    <!--<p:column headerText="ÜRÜN ADEDİ">-->
+                        <!--<h:outputText value="#{urun.urunAdet}"/>-->
+                    <!--</p:column>-->
+                    <!--<p:column headerText="BAŞLANGIÇTAKİ ÜRÜN SAYISI">-->
+                        <!--<h:outputText value="#{urun.baslangicUrunSayisi}"/>-->
+                    <!--</p:column>-->
+                    <!--<p:column headerText="İADE DURUMU">-->
+                        <!--<h:outputText value="#{urun.iadeDurumu}"/>-->
+                    <!--</p:column>-->
+                <!--</p:dataTable>-->
+
             </h:body>
         </ui:define>
     </ui:composition>
