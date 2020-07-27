@@ -22,7 +22,8 @@ CREATE TABLE stajyer.musteri_hesabi (
   CONSTRAINT musteri_hesabi_musteri_id_fkey FOREIGN KEY (musteri_id)
       REFERENCES musteri (id) MATCH SIMPLE
       ON UPDATE NO ACTION ON DELETE NO ACTION
-)
+);
+
 CREATE TABLE stajyer.urun_cesidi (
 
   id integer NOT NULL,
