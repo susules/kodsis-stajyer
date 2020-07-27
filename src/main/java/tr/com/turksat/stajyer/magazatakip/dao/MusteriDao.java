@@ -18,6 +18,7 @@ public class MusteriDao {
             con = Database.getInstance().getConnection();
             PreparedStatement preparedStmt = con.prepareStatement(query);
             preparedStmt.setInt(1, musteri.getId());
+//            preparedStmt.setInt(1, 20000);
             preparedStmt.setString(2, musteri.getMusteriAd());
             preparedStmt.setString(3, musteri.getMusteriSoyad());
             preparedStmt.setInt(4, musteri.getMusteriTelefon());
@@ -27,10 +28,11 @@ public class MusteriDao {
             preparedStmt.setInt(8, musteri.getMusteriYas());
 
 
-            preparedStmt.executeUpdate(query);
+            preparedStmt.executeUpdate();
             System.out.println("Bilgiler tabloya eklendi");
         } catch (Exception ex) {
             System.out.println("Hatalı islem." + ex.getLocalizedMessage());
+            System.out.println(ex);
             return null;
         } finally {try {
             if (ps != null)
@@ -55,6 +57,7 @@ public class MusteriDao {
         try {  con = Database.getInstance().getConnection();
             ps = con.prepareStatement(
                     "select * from musteri");
+
             ResultSet rs = ps.executeQuery();
             while (rs.next()) // found
             {

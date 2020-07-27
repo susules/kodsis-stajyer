@@ -42,7 +42,7 @@ public class MusteriForm implements Serializable {
     }
 
     public Object getMusteri() {
-        return musteri = new Musteri();
+        return musteri;
     }
 
     public void getUpdate() {
