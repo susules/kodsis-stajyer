@@ -1,7 +1,10 @@
 package tr.com.turksat.stajyer.magazatakip.jsfbean;
 
 import tr.com.turksat.stajyer.magazatakip.domain.Urun;
+import tr.com.turksat.stajyer.magazatakip.domain.UrunTanimi;
+import tr.com.turksat.stajyer.magazatakip.domain.UrunTipi;
 import tr.com.turksat.stajyer.magazatakip.service.UrunService;
+import tr.com.turksat.stajyer.magazatakip.service.UrunTanimiService;
 
 import javax.annotation.PostConstruct;
 import javax.faces.application.FacesMessage;
@@ -15,7 +18,9 @@ import java.util.List;
 public class UrunForm implements Serializable {
 
     UrunService urunService = new UrunService();
+    UrunTanimiService urunTanimiService= new UrunTanimiService();
     List<Urun> urunList = new ArrayList<>();
+    List<UrunTanimi> urunTanimiList = new ArrayList<>();
     private Urun urun;
 
     public UrunForm() {
@@ -26,11 +31,16 @@ public class UrunForm implements Serializable {
     public void init() {
         urun = new Urun();
         urunList = urunService.getUrun();
+        urunTanimiList = urunTanimiService.getUrunTanimi();
     }
 
     public List<Urun> getUrunList() {
         urunList = urunService.getUrun();
         return urunList;
+    }
+
+    public List<UrunTanimi> getUrunTanimiList() {
+        return urunTanimiList;
     }
 
     public void getAdd() {
@@ -43,8 +53,8 @@ public class UrunForm implements Serializable {
         return urunService.urunSil(urun);
     }
 
-    public Object getUrun() {
-        return urun = new Urun();
+    public Urun getUrun() {
+        return urun ;
     }
 
     public void getUpdate() {

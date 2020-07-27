@@ -1,6 +1,7 @@
 package tr.com.turksat.stajyer.magazatakip.dao;
 
 import tr.com.turksat.stajyer.magazatakip.domain.Urun;
+import tr.com.turksat.stajyer.magazatakip.domain.UrunTanimi;
 
 import javax.el.MethodExpression;
 import java.sql.Connection;
@@ -63,6 +64,8 @@ public class UrunDao {
                 Urun urun = new Urun();
                 urun.setId(rs.getInt(1));
                 urun.setUrunTanimiId(rs.getInt(2));
+                UrunTanimi urunTanimi = new UrunTanimiDao().getUrunTanimi(urun.getUrunTanimiId());
+                urun.setUrunTanimi(urunTanimi);
                 urun.setUrunFiyat(rs.getInt(3));
                 urun.setUrunAdet(rs.getInt(4));
                 urun.setBaslangicUrunSayisi(rs.getInt(5));

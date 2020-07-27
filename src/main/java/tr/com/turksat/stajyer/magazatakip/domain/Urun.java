@@ -4,13 +4,14 @@ public class Urun {
 
     private Integer id = -1;
     private Integer urunTanimiId;
+    private  UrunTanimi urunTanimi;
     private Integer urunFiyat;
     private Integer urunAdet;
     private Integer baslangicUrunSayisi;
     private String iadeDurumu;
 
     public Urun(){
-
+        urunTanimi= new UrunTanimi();
     }
 
     public Integer getId() {
@@ -27,6 +28,14 @@ public class Urun {
 
     public void setUrunTanimiId(Integer urunTanimiId) {
         this.urunTanimiId = urunTanimiId;
+    }
+
+    public UrunTanimi getUrunTanimi() {
+        return urunTanimi;
+    }
+
+    public void setUrunTanimi(UrunTanimi urunTanimi) {
+        this.urunTanimi = urunTanimi;
     }
 
     public Integer getUrunFiyat() {

@@ -34,6 +34,5 @@ public class UrunTanimiForm implements Serializable {
 
     public Object getUrunTanimi() {
         return urunTanimi = new UrunTanimi();
-
     }
 }

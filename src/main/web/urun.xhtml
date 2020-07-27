@@ -36,6 +36,9 @@
                         <p:column headerText="İade Durumu">
                             <p:inputText id="iadeDurumuInput" value="#{urun.iadeDurumu}"/>
                         </p:column>
+                        <p:column headerText="ürün tanımı urunRenk">
+                            <p:inputText id="urunRenk" value="#{urun.urunTanimi.urunRenk}"/>
+                        </p:column>
 
                         <p:column>
                             <p:commandButton update="urunListId" value="Sil" icon="ui-icon-closethick"
@@ -54,11 +57,11 @@
                 <h:form id="add">
                     <h:panelGrid columns="3" cellpadding="5" style="margin: 0 auto;">
 
-                        <!--<p:outputLabel for="urunTanimi" value="Ürün Tanımı"/>-->
-                        <!--<p:selectOneMenu id="urunTanimi" value="#{urunTanimiForm.urunTanimi}" style="width:150px">-->
-                            <!--<f:selectItem itemLabel="Seçiniz" itemValue="" noSelectionOption="true"/>-->
-                            <!--<f:selectItems value="#{urunTanimiForm.urunTanimiList}"/>-->
-                        <!--</p:selectOneMenu>-->
+                        <p:outputLabel for="urunTanimi" value="Ürün Tanımı"/>
+                        <p:selectOneMenu id="urunTanimi" value="#{urunForm.urun.urunTanimi}" style="width:150px">
+                            <f:selectItem itemLabel="Seçiniz" itemValue="" noSelectionOption="true"/>
+                            <f:selectItems value="#{urunForm.urunTanimiList}"/>
+                        </p:selectOneMenu>
 
                         <p:outputLabel for="urunFiyat" value="Ürün Fiyat" />
                         <p:inputNumber id="urunFiyat" value="#{urunForm.urun.urunFiyat}" padControl="false" style="width:150px" />
