@@ -14,6 +14,8 @@ CREATE TABLE stajyer.musteri (
   CONSTRAINT musteri_pkey PRIMARY KEY (id)
 ) ;
 
+drop table if exists stajyer.musteri_hesabi;
+
 CREATE TABLE stajyer.musteri_hesabi (
 
  id integer NOT NULL,
@@ -24,12 +26,17 @@ CREATE TABLE stajyer.musteri_hesabi (
       ON UPDATE NO ACTION ON DELETE NO ACTION
 );
 
+drop table if exists stajyer.urun_cesidi;
+
 CREATE TABLE stajyer.urun_cesidi (
 
   id integer NOT NULL,
   urun_cesit_ad text,
   CONSTRAINT urun_cesidi_pkey PRIMARY KEY (id)
 ) ;
+
+drop table if exists stajyer.urun_tanimi;
+
 CREATE TABLE stajyer.urun_tanimi (
 
   id integer NOT NULL,
@@ -46,6 +53,8 @@ CREATE TABLE stajyer.urun_tanimi (
       ON UPDATE NO ACTION ON DELETE NO ACTION
 ) ;
 
+drop table if exists stajyer.urun;
+
 CREATE TABLE stajyer.urun (
 
   id integer NOT NULL,
@@ -60,6 +69,9 @@ CREATE TABLE stajyer.urun (
       ON UPDATE NO ACTION ON DELETE NO ACTION
 
 ) ;
+
+drop table if exists stajyer.satis;
+
 CREATE TABLE stajyer.satis (
 
   id integer NOT NULL,
