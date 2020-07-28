@@ -1,5 +1,5 @@
 
-drop table if exists stajyer.musteri;
+ drop table if exists stajyer.musteri cascade;
 
 CREATE TABLE stajyer.musteri (
 
@@ -14,7 +14,10 @@ CREATE TABLE stajyer.musteri (
   CONSTRAINT musteri_pkey PRIMARY KEY (id)
 ) ;
 
-drop table if exists stajyer.musteri_hesabi;
+ALTER TABLE stajyer.musteri
+  OWNER TO stajyer;
+
+drop table if exists stajyer.musteri_hesabi cascade;
 
 CREATE TABLE stajyer.musteri_hesabi (
 
@@ -26,7 +29,10 @@ CREATE TABLE stajyer.musteri_hesabi (
       ON UPDATE NO ACTION ON DELETE NO ACTION
 );
 
-drop table if exists stajyer.urun_cesidi;
+ALTER TABLE stajyer.musteri_hesabi
+  OWNER TO stajyer;
+
+drop table if exists stajyer.urun_cesidi cascade;
 
 CREATE TABLE stajyer.urun_cesidi (
 
@@ -35,7 +41,11 @@ CREATE TABLE stajyer.urun_cesidi (
   CONSTRAINT urun_cesidi_pkey PRIMARY KEY (id)
 ) ;
 
-drop table if exists stajyer.urun_tanimi;
+
+ALTER TABLE stajyer.urun_cesidi
+  OWNER TO stajyer;
+
+drop table if exists stajyer.urun_tanimi cascade;
 
 CREATE TABLE stajyer.urun_tanimi (
 
@@ -53,7 +63,10 @@ CREATE TABLE stajyer.urun_tanimi (
       ON UPDATE NO ACTION ON DELETE NO ACTION
 ) ;
 
-drop table if exists stajyer.urun;
+ALTER TABLE stajyer.urun_tanimi
+  OWNER TO stajyer;
+
+drop table if exists stajyer.urun cascade;
 
 CREATE TABLE stajyer.urun (
 
@@ -70,7 +83,10 @@ CREATE TABLE stajyer.urun (
 
 ) ;
 
-drop table if exists stajyer.satis;
+ALTER TABLE stajyer.urun
+  OWNER TO stajyer;
+
+drop table if exists stajyer.satis cascade;
 
 CREATE TABLE stajyer.satis (
 
@@ -89,5 +105,5 @@ CREATE TABLE stajyer.satis (
 
 ) ;
 
-ALTER TABLE stajyer.tb_kullanici
+ALTER TABLE stajyer.satis
   OWNER TO stajyer;
