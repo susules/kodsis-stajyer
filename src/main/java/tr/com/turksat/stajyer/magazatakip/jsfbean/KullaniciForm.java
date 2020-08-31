@@ -16,6 +16,7 @@ import java.util.List;
 @ManagedBean
 public class KullaniciForm implements Serializable {
 
+
     KullaniciService kullaniciService = new KullaniciService();
     List<MarkaTipi> markalar = new ArrayList();
     List<UrunTipi> urunTipleri = new ArrayList();
