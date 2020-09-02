@@ -1,9 +1,9 @@
 package tr.com.turksat.stajyer.magazatakip.jsfbean;
 
-import tr.com.turksat.stajyer.magazatakip.domain.Kullanici;
-import tr.com.turksat.stajyer.magazatakip.domain.MarkaTipi;
-import tr.com.turksat.stajyer.magazatakip.domain.ModelTipi;
-import tr.com.turksat.stajyer.magazatakip.domain.UrunTipi;
+import tr.com.turksat.stajyer.magazatakip.domain.eski.Kullanici;
+import tr.com.turksat.stajyer.magazatakip.domain.eski.MarkaTipi;
+import tr.com.turksat.stajyer.magazatakip.domain.eski.ModelTipi;
+import tr.com.turksat.stajyer.magazatakip.domain.eski.UrunTipi;
 import tr.com.turksat.stajyer.magazatakip.service.KullaniciService;
 
 import javax.annotation.PostConstruct;

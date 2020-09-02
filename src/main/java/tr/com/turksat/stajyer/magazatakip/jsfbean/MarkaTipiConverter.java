@@ -5,7 +5,7 @@ package tr.com.turksat.stajyer.magazatakip.jsfbean;
  */
 
 
-import tr.com.turksat.stajyer.magazatakip.domain.MarkaTipi;
+import tr.com.turksat.stajyer.magazatakip.domain.eski.MarkaTipi;
 
 import javax.faces.application.FacesMessage;
 import javax.faces.component.UIComponent;

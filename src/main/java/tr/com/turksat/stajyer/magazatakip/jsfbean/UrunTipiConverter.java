@@ -5,7 +5,7 @@ package tr.com.turksat.stajyer.magazatakip.jsfbean;
  */
 
 
-import tr.com.turksat.stajyer.magazatakip.domain.UrunTipi;
+import tr.com.turksat.stajyer.magazatakip.domain.eski.UrunTipi;
 
 import javax.annotation.ManagedBean;
 import javax.faces.application.FacesMessage;

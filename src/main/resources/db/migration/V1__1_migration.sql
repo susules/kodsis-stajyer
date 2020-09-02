@@ -1,6 +1,6 @@
 
 
-drop table if exists stajyer.tb_kullanici;
+--drop table if exists stajyer.tb_kullanici;
 
 CREATE TABLE stajyer.tb_kullanici (
   id BIGINT NOT NULL,
