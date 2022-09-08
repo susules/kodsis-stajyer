@@ -14,7 +14,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <resources.directory>src/main/resources</resources.directory>
         <webapp.directory>src/main/web</webapp.directory>
-        <org.postgresql.version>42.2.5</org.postgresql.version>
+        <org.postgresql.version>42.4.1</org.postgresql.version>
         <primefaces.version>6.1</primefaces.version>
         <source.version>1.8</source.version>
         <jsf.version>2.2.19</jsf.version>
